@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">The App</string>
+    <string-array name="kuantitas_olahraga">
+        <item>Sangat jarang</item>
+        <item>Jarang (1-3 kali per minggu)</item>
+        <item>Cukup (3-5 kali per minggu)</item>
+        <item>Sering (6-7 kali per minggu</item>
+        <item>Sangat Sering (sehari 2 kali)</item>
+    </string-array>
+
+    <string-array name="menu_makanan">
+        <item>Omelet</item>
+        <item>Capcay</item>
+        <item>Bakso</item>
+        <item>Soto</item>
+        <item>Salad</item>
+    </string-array>
+
+</resources>
