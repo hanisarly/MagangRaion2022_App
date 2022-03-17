@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,35 +11,26 @@
     android:padding="15dp"
     tools:context=".MainActivity3">
 
-    <TextView
-        android:id="@+id/total_gizi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="total gizi"
-        android:layout_gravity="center_horizontal"
-        android:textSize="30sp"
-        android:textStyle="bold"/>
-
-    <TextView
-        android:id="@+id/total_hitung"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="0"
-        android:layout_gravity="center_horizontal"
-        android:textSize="30sp"
-        android:textStyle="bold"/>
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/pc_kalori"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginVertical="30dp"
+        android:layout_marginHorizontal="10dp"
+        />
 
     <Button
         android:id="@+id/button_menu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="550dp"
+        android:layout_marginTop="250dp"
         android:layout_marginBottom="20dp"
         android:backgroundTint="#009688"
         android:text="Lihat Rekomendasi"
         android:textColor="@color/white"
         android:textSize="15sp"
-        android:onClick="onClick4"
         />
+
+
 
 </LinearLayout>

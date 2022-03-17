@@ -7,11 +7,13 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import com.github.mikephil.charting.data.PieData
+import com.github.mikephil.charting.data.PieDataSet
+import com.github.mikephil.charting.data.PieEntry
 
 class MainActivity3 : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var buttonmenu : Button
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,8 +25,15 @@ class MainActivity3 : AppCompatActivity(), View.OnClickListener {
         actionBar.setDisplayHomeAsUpEnabled(true)
         actionBar.setDisplayHomeAsUpEnabled(true)
 
-        buttonmenu = findViewById(R.id.button_next)
-        buttonmenu.setOnClickListener(this)
+        //Button Menu
+        buttonmenu = findViewById(R.id.button_menu)
+        buttonmenu.setOnClickListener{
+            val intent = Intent(this, MainActivity4::class.java)
+            startActivity(intent)
+        }
+
+        setupPieChart()
+
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -32,16 +41,30 @@ class MainActivity3 : AppCompatActivity(), View.OnClickListener {
         return true
     }
 
-    fun onClick4(view: View?) {
-        when(view?.id){
-            R.id.button_menu ->{
-                val justIntent4 = Intent(this@MainActivity3, MainActivity4::class.java)
-                startActivity(justIntent4)
-            }
-        }
+    override fun onClick(v: View?) {
+        TODO("Not yet implemented")
     }
 
-    override fun onClick(v: View?) {
+    private fun setupPieChart(){
+
+        //setup pie entries
+        val pieEntries = arrayListOf<PieEntry>()
+        pieEntries.add(PieEntry(2160.0f))
+        pieEntries.add(PieEntry(2500.0f))
+
+        //pie chart entries colors
+        val pieDataSet = PieDataSet(pieEntries, "kalori chart!!")
+        pieDataSet.setColors(
+            resources.getColor(R.color.design_default_color_secondary_variant),
+            resources.getColor(R.color.design_default_color_secondary)
+        )
+
+        //setup pie data set in piedata
+        val pieData = PieData(pieDataSet)
+        
+        //enabled the value on each pieEntry
+        pieData.setDrawValues(true)
+
 
     }
 

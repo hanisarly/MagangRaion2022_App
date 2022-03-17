@@ -166,9 +166,6 @@
         android:text="Berikutnya"
         android:textColor="@color/white"
         android:textSize="15sp"
-        android:onClick="onClick3"/>
-
-
-
+        />
 
 </LinearLayout>

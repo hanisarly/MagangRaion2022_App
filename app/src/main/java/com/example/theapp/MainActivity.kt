@@ -6,43 +6,26 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 
-class MainActivity : AppCompatActivity(), View.OnClickListener {
+class MainActivity : AppCompatActivity(){
 
-    private lateinit var buttonintent : Button
-    private lateinit var buttonmenu : Button
+    private lateinit var buttonIntent : Button
+    private lateinit var buttonMenu : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        buttonintent = findViewById(R.id.button_intent)
-        buttonintent.setOnClickListener(this)
-
-        buttonmenu = findViewById(R.id.button_menu)
-        buttonmenu.setOnClickListener(this)
-    }
-
-    //kalkulator gizi harian
-    override fun onClick(v: View) {
-        when(v.id){
-            R.id.button_intent ->{
-                val justIntent = Intent(this@MainActivity, MainActivity2::class.java)
-                startActivity(justIntent)
-            }
+        //kalkulator gizi harian
+        buttonIntent = findViewById(R.id.button_intent)
+        buttonIntent.setOnClickListener{
+            val intent = Intent(this, MainActivity2::class.java)
+            startActivity(intent)
         }
-
-    }
-
-    //rekomendasi menu
-    fun onClick2(v: View) {
-        when (v.id) {
-            R.id.button_menu -> {
-                val justIntent3 = Intent(this@MainActivity, MainActivity4::class.java)
-                startActivity(justIntent3)
-            }
+        //rekomendasi menu
+        buttonMenu = findViewById(R.id.button_menu)
+        buttonMenu.setOnClickListener{
+            val intent = Intent(this, MainActivity4::class.java)
+            startActivity(intent)
         }
     }
-
-
-
 }
