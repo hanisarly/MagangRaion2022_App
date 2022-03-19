@@ -9,11 +9,55 @@
     </string-array>
 
     <string-array name="menu_makanan">
-        <item>Omelet</item>
-        <item>Capcay</item>
+        <item>Nasi Goreng</item>
         <item>Bakso</item>
-        <item>Soto</item>
-        <item>Salad</item>
+        <item>Sate</item>
+        <item>Soto Ayam</item>
+        <item>Mie Goreng</item>
+        <item>Gudeg</item>
+        <item>Gado - Gado</item>
     </string-array>
+
+    <string name="detail_nasi_goreng">
+        Protein      : 6 gram
+        Karbohidrat  : 35 gram
+        Lemak        :15 gram
+    </string>
+
+    <string name="detail_bakso">
+        Protein: 17,37gram
+        Karbohidrat: 10,61gram
+        Lemak: 18,43gram
+    </string>
+
+    <string name="detail_Sate">
+        Protein: 2,93 g
+        Karbohidrat: 0,73g
+        Lemak: 2,22g
+    </string>
+
+    <string name="detail_soto">
+        Protein: 24,01g
+        Karbohidrat: 19,55g
+        Lemak: 14,92g
+    </string>
+
+    <string name="detail_gudeg">
+       Protein: 4,31g
+        Karbohidrat: 22,54,32g
+        Lemak: 11,34g
+    </string>
+
+    <string name="detail_mie_goreng">
+        Protein: 8g
+        Karbohidrat: 52g
+        Lemak: 12g
+    </string>
+
+    <string name="detail_gado_gado">
+        Protein: 17,22g
+        Karbohidrat: 26,28g
+        Lemak: 17,86g
+    </string>
 
 </resources>

@@ -7,13 +7,19 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import com.github.mikephil.charting.data.PieData
-import com.github.mikephil.charting.data.PieDataSet
-import com.github.mikephil.charting.data.PieEntry
+import com.anychart.AnyChart
+import com.anychart.AnyChartView
+import com.anychart.chart.common.dataentry.DataEntry
+import com.anychart.chart.common.dataentry.ValueDataEntry
+import com.anychart.charts.Pie
+
 
 class MainActivity3 : AppCompatActivity(), View.OnClickListener {
 
+    private var chart: AnyChartView? = null
     private lateinit var buttonmenu : Button
+    private val kalori = listOf(500, 2500)
+    private val keterangan = listOf("Kalori Anda", "Kalori")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,7 +38,22 @@ class MainActivity3 : AppCompatActivity(), View.OnClickListener {
             startActivity(intent)
         }
 
-        setupPieChart()
+        //----PIE CHART---
+        chart = findViewById(R.id.pc_kalori)
+        configChartView()
+
+    }
+
+    private fun configChartView() {
+        val pie : Pie =AnyChart.pie()
+        val dataPieChart: MutableList<DataEntry> = mutableListOf()
+        dataPieChart.add(DataEntry())
+        for (index in kalori.indices){
+            dataPieChart.add(ValueDataEntry(keterangan.elementAt(index),kalori.elementAt(index)))
+        }
+        pie.data(dataPieChart)
+        pie.title("Kalori User")
+        chart!!.setChart(pie)
 
     }
 
@@ -45,28 +66,28 @@ class MainActivity3 : AppCompatActivity(), View.OnClickListener {
         TODO("Not yet implemented")
     }
 
-    private fun setupPieChart(){
-
-        //setup pie entries
-        val pieEntries = arrayListOf<PieEntry>()
-        pieEntries.add(PieEntry(2160.0f))
-        pieEntries.add(PieEntry(2500.0f))
-
-        //pie chart entries colors
-        val pieDataSet = PieDataSet(pieEntries, "kalori chart!!")
-        pieDataSet.setColors(
-            resources.getColor(R.color.design_default_color_secondary_variant),
-            resources.getColor(R.color.design_default_color_secondary)
-        )
-
-        //setup pie data set in piedata
-        val pieData = PieData(pieDataSet)
-        
-        //enabled the value on each pieEntry
-        pieData.setDrawValues(true)
-
-
-    }
+//    private fun setupPieChart(){
+//
+//        //setup pie entries
+//        val pieEntries = arrayListOf<PieEntry>()
+//        pieEntries.add(PieEntry(2160.0f))
+//        pieEntries.add(PieEntry(2500.0f))
+//
+//        //animation
+//
+//        //pie chart entries colors
+//        val pieDataSet = PieDataSet(pieEntries, "kalori chart!!")
+//        pieDataSet.setColors(
+//            resources.getColor(R.color.design_default_color_secondary_variant),
+//            resources.getColor(R.color.design_default_color_secondary)
+//        )
+//
+//        //setup pie data set in piedata
+//        val pieData = PieData(pieDataSet)
+//
+//        //enabled the value on each pieEntry
+//        pieData.setDrawValues(true)
+//    }
 
 
 }
