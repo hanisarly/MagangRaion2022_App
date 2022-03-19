@@ -10,6 +10,11 @@ class DetailMenuActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_menu)
 
+        //Back Button
+        val actionBar = supportActionBar
+        actionBar!!.title = "Rekomendasi Menu"
+        actionBar.setDisplayHomeAsUpEnabled(true)
+
         val imageMenu : ImageView = findViewById(R.id.iv_imageMenu)
         val titleMenu : TextView = findViewById(R.id.tv_titleMenu)
         val descMenu : TextView = findViewById(R.id.tv_descMenu)
@@ -23,7 +28,12 @@ class DetailMenuActivity : AppCompatActivity() {
         titleMenu.text = title
         descMenu.text = detail
 
-
-
     }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
+    }
+
+
 }

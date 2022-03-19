@@ -31,7 +31,6 @@ class MainActivity4 : AppCompatActivity() {
         recyclerView.adapter = adaptorMenu
 
 
-
         dataList.add(DataModel("Nasi Goreng",R.drawable.nasi_goreng))
         dataList.add(DataModel("Bakso",R.drawable.bakso))
         dataList.add(DataModel("Sate",R.drawable.sate))
@@ -63,6 +62,11 @@ class MainActivity4 : AppCompatActivity() {
         adaptorMenu.setDataList(dataList)
         getData()
 
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 
     private fun getData(){

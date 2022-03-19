@@ -51,9 +51,11 @@ class MainActivity3 : AppCompatActivity(), View.OnClickListener {
         for (index in kalori.indices){
             dataPieChart.add(ValueDataEntry(keterangan.elementAt(index),kalori.elementAt(index)))
         }
+        pie.radius(75f)
         pie.data(dataPieChart)
         pie.title("Kalori User")
         chart!!.setChart(pie)
+
 
     }
 
